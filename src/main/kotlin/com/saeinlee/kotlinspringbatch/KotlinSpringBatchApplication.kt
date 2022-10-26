@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
 @EnableBatchProcessing
+@EnableScheduling
 class KotlinSpringBatchApplication
 
 fun main(args: Array<String>) {

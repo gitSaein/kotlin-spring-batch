@@ -26,7 +26,7 @@ class InActiveUserJobConfig(
 ) {
     private val logger = KotlinLogging.logger {}
     private final val now = LocalDateTime.now(ZoneId.of("Asia/Seoul")).toString()
-    private final val INACTIVE_USER_JOB = "INACTIVE_USER_JOB__" + now
+    private final val INACTIVE_USER_JOB = "INACTIVE_USER_JOB_" + now
     private final val INACTIVE_USER_JOB_STEP = INACTIVE_USER_JOB + "_STEP"
     private final val CHUNK_SIZE = 10
 
@@ -50,7 +50,7 @@ class InActiveUserJobConfig(
     @Bean
     @StepScope
     fun reader (@Value("#{jobParameters[requestDate]}") requestDate: String?): InactiveUserReader {
-        return InactiveUserReader()
+        return InactiveUserReader("")
     }
 
     @Bean

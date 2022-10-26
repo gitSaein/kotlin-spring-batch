@@ -12,10 +12,10 @@ import javax.annotation.PostConstruct
 
 @Component
 @StepScope
-class InactiveUserReader: ItemReader<User> {
-
+class InactiveUserReader(
     @Value("#{jobParameters[requestDate]}")
-    private lateinit var requestDate: String
+    private var requestDate: String
+) : ItemReader<User> {
 
     @Autowired
     private lateinit var userRepositories: Repositories
